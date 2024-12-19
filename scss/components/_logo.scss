@@ -1,0 +1,10 @@
+.logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 1.5rem;
+
+    &-img {
+        width: 7rem;
+        height: 100%;
+    }
+}

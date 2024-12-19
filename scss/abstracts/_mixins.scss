@@ -1,0 +1,80 @@
+@mixin navigation {
+    &-list {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+
+    &-item {
+        list-style: none;
+    }
+
+    &-link {
+        color: color(primary);
+        text-decoration: none;
+        font-size: fontSize(sm);
+        transition: all .3s;
+
+        &:hover {
+            color: lighten(color(primary), 40%);
+        }
+    }
+}
+
+@mixin flexPosition($justCont: center, $alignItem: center) {
+    display: flex;
+    justify-content: $justCont;
+    align-items: $alignItem;
+}
+
+@mixin styleList {
+    &-heading {
+        font-size: fontSize(lg);
+        color: color(primary);
+    }
+
+    &-item {
+        list-style: none;
+        margin: 1rem 0;
+    }
+
+    &-link {
+        text-decoration: none;
+        font-size: fontSize(xs);
+        color: lighten(color(primary), 15%);
+        transition: all .2s;
+
+        &:hover {
+            color: darken(color(primary), 10%);
+        }
+    }
+}
+
+
+@mixin response($breakpoint) {
+    @if($breakpoint == xl) {
+        @media(max-width: 1350px) {
+            @content;
+        }
+    }
+
+    @if($breakpoint == lg) {
+        @media(max-width: 1000px) {
+            @content;
+        }
+    }
+
+    @if($breakpoint == md) {
+        @media(max-width: 760px) {
+            @content;
+        }
+    }
+
+    @if($breakpoint == sm) {
+        @media(max-width: 560px) {
+            @content;
+        }
+    }
+}
